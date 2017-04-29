@@ -61,6 +61,4 @@ Outra possibilidade seria mudar as configurações do próprio MPI para conectar
 **8** - testa o funcionamento do MPI no ambiente LXC
 - o master (máquina Linux) conecta nos slaves (containers) e executa o comando `hostname` no Linux dos containers. O resultado é o print dos nomes das instâncias LXC na tela
 
-ex.: mpi2
-mpi3
-mpi4 ...
+ex.: mpi2\ mpi3\ mpi4 ...
