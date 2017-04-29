@@ -1,6 +1,6 @@
 ## Dados da VM:
-  ** usuário: mpi
-     senha: mpi **
+   usuário: mpi
+   senha: mpi
   
 ## arquivos e funções:
   criar_containers_lxd.sh
