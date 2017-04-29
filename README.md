@@ -1,13 +1,13 @@
 ## Dados da VM:
-   usuário: mpi
+   usuário: mpi   
    senha: mpi
   
 ## arquivos e funções:
-  criar_containers_lxd.sh \
-    - instancia os containers LXD que serão os MPI slaves \
-    
-  destruir_containers_lxd.sh \
-    - simplesmente destrói as instâncias LXD \
+  criar_containers_lxd.sh
+   - instancia os containers LXD que serão os MPI slaves 
+  
+  destruir_containers_lxd.sh
+   - simplesmente destrói as instâncias LXD
 
 ## OBSERVAÇÕES IMPORTANTES SOBRE O ARQUIVO criar_containers_lxd.sh
 
