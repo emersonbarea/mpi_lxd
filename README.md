@@ -30,8 +30,8 @@
  Obs.: caso queira saber se já existem containers instanciados antes de usar o script, execute o comando `lxc list`
      
  4 - cria os novos containers que serão os "slaves" no MPI
-     - cada slave recebe o nome `mpi<número_sequencial_a_partir_do_2>`
-       ex.: mpi2, mpi3, mpi4 (e assim sequencialmente)
+ 
+     - cada slave recebe o nome `mpi<número_sequencial_a_partir_do_2>`. Ex.: mpi2, mpi3, mpi4 (e assim sequencialmente)
 
  5 - configura o IP nos containers de forma estruturada para facilitar o gerenciamento
      - o "master" precisa conhecer os IPs dos slaves para conectar via SSH
