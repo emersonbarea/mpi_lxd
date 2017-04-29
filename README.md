@@ -2,12 +2,15 @@
    usuário: mpi   
    senha: mpi
   
-## arquivos e funções:
+## Arquivos e funções:
   criar_containers_lxd.sh
    - instancia os containers LXD que serão os MPI slaves 
   
   destruir_containers_lxd.sh
    - simplesmente destrói as instâncias LXD
+
+## Como usar?
+Para utilizar a estrutura de MPI em ambiente LXD, basta realizar download da VM Ubuntu, entrar com o usuário `mpi` e senha `mpi` e executar o comando `sudo ./criar_containers_lxd.sh 3`, por exemplo. o **3** do comando corresponde ao número de containers LXD que você deseja criar.
 
 ## Observaçes importantes sobre o arquivo `criar_containers_lxd.sh`
 
