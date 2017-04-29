@@ -9,7 +9,7 @@
   destruir_containers_lxd.sh
    - simplesmente destrói as instâncias LXD
 
-## OBSERVAÇÕES IMPORTANTES SOBRE O ARQUIVO criar_containers_lxd.sh
+## Observaçes importantes sobre o arquivo `criar_containers_lxd.sh`
 
  - este script não tem o objetivo de ser um exemplo de ótima programação. Tem por objetivo ser simples e de fácil entendimento a qualquer computólogo \\
 
