@@ -1,5 +1,5 @@
 ## Dados da VM:
-   usuário: mpi
+   usuário: mpi \
    senha: mpi
   
 ## arquivos e funções:
