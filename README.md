@@ -3,16 +3,15 @@
    senha: mpi
   
 ## arquivos e funções:
-  criar_containers_lxd.sh
-    - instancia os containers LXD que serão os MPI slaves
+  criar_containers_lxd.sh \
+    - instancia os containers LXD que serão os MPI slaves \
     
-  destruir_containers_lxd.sh
-    - simplesmente destrói as instâncias LXD    
+  destruir_containers_lxd.sh \
+    - simplesmente destrói as instâncias LXD \
 
 ## OBSERVAÇÕES IMPORTANTES SOBRE O ARQUIVO criar_containers_lxd.sh
 
- - este script não tem o objetivo de ser um exemplo de ótima programação. Tem por objetivo
-   ser simples e de fácil entendimento a qualquer computólogo
+ - este script não tem o objetivo de ser um exemplo de ótima programação. Tem por objetivo ser simples e de fácil entendimento a qualquer computólogo \\
 
  - "container" = instância LXC (como se fosse uma máquina virtual bem leve)
 
