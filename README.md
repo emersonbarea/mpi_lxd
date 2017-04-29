@@ -1,8 +1,8 @@
-Dados da VM:
-  usuário: mpi
-  senha: mpi
+## Dados da VM:
+  ** usuário: mpi
+     senha: mpi **
   
-arquivos e funções:
+## arquivos e funções:
   criar_containers_lxd.sh
     - instancia os containers LXD que serão os MPI slaves
     
