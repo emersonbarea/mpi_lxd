@@ -10,7 +10,7 @@
    - simplesmente destrói as instâncias LXD
 
 ## Como usar?
-Para utilizar a estrutura de MPI em ambiente LXD, basta realizar download da VM Ubuntu, entrar com o usuário `mpi` e senha `mpi` e executar o comando `sudo ./criar_containers_lxd.sh 3`, por exemplo. o **3** do comando corresponde ao número de containers LXD que você deseja criar.
+Para utilizar a estrutura de MPI em ambiente LXD, basta realizar download da VM Ubuntu, entrar com o usuário `mpi` e senha `mpi` e executar o comando `sudo ./criar_containers_lxd.sh 3`, por exemplo. O número **3** no comando corresponde ao número de containers LXD que você deseja criar.
 
 ## Observaçes importantes sobre o arquivo `criar_containers_lxd.sh`
 
@@ -64,6 +64,4 @@ Outra possibilidade seria mudar as configurações do próprio MPI para conectar
 **8** - testa o funcionamento do MPI no ambiente LXC
 - o master (máquina Linux) conecta nos slaves (containers) e executa o comando `hostname` no Linux dos containers. O resultado é o print dos nomes das instâncias LXC na tela
 
-ex.: mpi2
-mpi3
-mpi4 ...
+ex.: **mpi2 mpi3 mpi4 ...**
