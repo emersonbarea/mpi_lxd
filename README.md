@@ -15,7 +15,7 @@
  
  - "container" = instância LXC (como se fosse uma máquina virtual bem leve)
  
- - CADA CONTAINER SERÁ UTILIZADO COMO UMA MÁQUINA SLAVE NO MPI !!!
+ - **cada container será utilizdo como uma máquina slave no MPI**
 
  ## O que esse script faz?
  
@@ -26,7 +26,8 @@
  2 - verifica se você é root (sudo). Precisa ser root porque o script executa um "ls" no diretório `/var/lib/lxd/containers/`, que é de propriedade do root
  
  3 - verifica se já tem containers rodando na máquina. Caso tenha, exclui todos.
-     Obs.: caso queira saber se já existem containers instanciados antes de usar o script, execute o comando `lxc list`
+ 
+ Obs.: caso queira saber se já existem containers instanciados antes de usar o script, execute o comando `lxc list`
      
  4 - cria os novos containers que serão os "slaves" no MPI
      - cada slave recebe o nome `mpi<número_sequencial_a_partir_do_2>`
