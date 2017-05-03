@@ -48,7 +48,11 @@ Após a configuração do LXD, baixe e instale uma imagem para ser utilizada por
 lxc launch ubuntu:16.04 mpi_test
 lxc list
 ```
-Passe o `source.list` do Ubuntu master (sua instalação padrão) para os containers (slaves), atualizando a distribuição dos slaves.
+Atualize o `source.list` do container com o `source.list` do Ubuntu master, permitindo a atualização da distribuição dos slaves.
+
+`cat /etc/apt/sources.list >  /var/lib/lxd/containers/mpi/rootfs/etc/apt/sources.list`
+
+Agora, atualize a distribuição Ubuntu dos containers
 
 ```
 lxc exec mpi_test -- apt-get update
