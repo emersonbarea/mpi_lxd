@@ -113,4 +113,6 @@ Realizadas todas atualizações e configurações necessárias, crie uma nova im
 ```
 lxc stop mpi_test
 lxc publish mpi_test --alias=mpi
+lxc delete mpi_test
 ```
+Agora seu ambiente está pronto para utilizar o MPI em containers LXD. Para isso, execute o script [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh).
