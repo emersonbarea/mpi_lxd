@@ -1,5 +1,5 @@
 Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso) em bare metal, como VM do Oracle Virtual Box ou outro hypervisor qualquer.
-- crie o usuário `mpi` com senha `mpi`
+- crie o usuário `mpi` com senha `mpi` (Obs.: lógico, se sua máquina estiver acessível através de rede, use uma senha mais complexa.
 - neste exemplo foi utilizado um disco com 15GB
 - sem interface gráfica
 - apenas com SSH server
@@ -10,7 +10,7 @@ Atualizações e configurações necessárias:
 ```
 apt-get update
 apt-get upgrade
-apt-get install build-essential openmpi-bin bridge-utils htop
+apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux
 ```
 Inicie a configuração do LXD com o seguinte comando
 
