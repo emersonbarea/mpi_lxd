@@ -14,6 +14,10 @@ apt-get update
 apt-get upgrade
 apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux
 ```
+## Configurando o Ambiente LXD
+
+Obs.: a partir desse momento, considere `master` como sendo o S.O. Ubuntu que você acabou de instalar. Considere `container`ou `slave` as instâncias LXD.
+
 Inicie a configuração do LXD com o seguinte comando
 
 `sudo lxd init`
@@ -41,21 +45,25 @@ LXD has been successfully configured.
 Após a configuração do LXD, baixe e instale uma imagem para ser utilizada por seus containers.
 
 ```
-lxc launch ubuntu:16.04 mpi
+lxc launch ubuntu:16.04 mpi_test
 lxc list
 ```
 Passe o `source.list` do Ubuntu master (sua instalação padrão) para os containers (slaves), atualizando a distribuição dos slaves.
 
 ```
-lxc exec mpi -- apt-get update
-lxc exec mpi -- apt-get dist-upgrade -y
-lxc exec mpi -- apt-get autoremove --purge -y
-lxc exec mpi -- apt-get install build-essential openmpi-bin
-lxc exec mpi -- bash
+lxc exec mpi_test -- apt-get update
+lxc exec mpi_test -- apt-get dist-upgrade -y
+lxc exec mpi_test -- apt-get autoremove --purge -y
+lxc exec mpi_test -- apt-get install build-essential openmpi-bin htop
+lxc exec mpi_test -- bash
 ```
-com usuário mpi e root
+No master, crie as chaves SSH do usuário mpi para que o master possa conectar nos slaves 
+
+```
 ssh-keygen -t rsa
-cat /home/mpi/.ssh/id_rsa.pub (colar no /root/.ssh/authorized.key e /home/ubuntu/
+cat /home/mpi/.ssh/id_rsa.pub (colar no /home/mpi/.ssh/authorized.key da imagem
 lxc stop first
 lxc publish first/mpi --alias=mpi
 lxc launch mpi mpi1
+```
+
