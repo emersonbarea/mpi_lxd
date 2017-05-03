@@ -12,7 +12,7 @@ Atualizações e configurações necessárias:
 ```
 apt-get update
 apt-get upgrade
-apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux
+apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux git
 ```
 ## Configurando o Ambiente LXD
 
@@ -69,11 +69,41 @@ Verifique se as versões do MPI do master e slave são compatíveis. Execute os 
 Agora crie as chaves SSH no master para permitir que ele conecte via SSH sem solicitação de senha durante a execução do MPI.
 No master, faça
 
+`sudo -H -u mpi bash -c "ssh-keygen -t rsa"`
+
+e siga o exemplo abaixo nos parâmetros solicitados:
+
 ```
-ssh-keygen -t rsa
-cat /home/mpi/.ssh/id_rsa.pub (colar no /home/mpi/.ssh/authorized.key da imagem
-lxc stop first
-lxc publish first/mpi --alias=mpi
-lxc launch mpi mpi1
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/mpi/.ssh/id_rsa): 
+Created directory '/home/mpi/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/mpi/.ssh/id_rsa.
+Your public key has been saved in /home/mpi/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:aIJnNBZhJwCjIZtiDHtc8IIfCyPncOPp/wIUGmpWWUA mpi@mpi
+The key's randomart image is:
++---[RSA 2048]----+
+|*.+EXo.          |
+|*O.* +           |
+|&=X.=            |
+|*&.X . .         |
+|o.B + o S        |
+| ..o o           |
+|  ..             |
+|   ..            |
+|    .o.          |
++----[SHA256]-----+
+```
+Agora passe a chave SSH criada para o container
+
+`cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi/rootfs/home/mpi/.ssh/authorized_keys`
+
+Realizadas todas atualizações e configurações necessárias, crie uma nova imagem para ser utilizados pelos slaves do MPI baseado nessa versão de container LXD.
+
+```
+lxc stop mpi_test
+lxc publish mpi_test --alias=mpi
 ```
 
