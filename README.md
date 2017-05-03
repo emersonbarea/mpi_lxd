@@ -1,12 +1,15 @@
 Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso) em bare metal, como VM do Oracle Virtual Box ou outro hypervisor qualquer.
 - sem interface gráfica
-- com SSH server
+- apenas com SSH server
+- O Ubuntu Server 17.04 - 64 bit já vem com o LXD instalador por padrão
 
-configurações da VM Ubuntu
-apt-get update
+Atualizações e configurações necessárias:
+
+`apt-get update
 apt-get upgrade
 apt-get install build-essential openmpi-bin
-apt-get install bridge-utils htop
+apt-get install bridge-utils htop`
+
 # sudo lxd init
 Do you want to configure a new storage pool (yes/no) [default=yes]?
 Name of the new storage pool [default=default]: storage_mpi
