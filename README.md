@@ -8,11 +8,12 @@ Atualizações e configurações necessárias:
 ```
 apt-get update
 apt-get upgrade
-apt-get install build-essential openmpi-bin
-apt-get install bridge-utils htop
+apt-get install build-essential openmpi-bin bridge-utils htop
 ```
+Configure o LXD
 
-# sudo lxd init
+`sudo lxd init`
+
 Do you want to configure a new storage pool (yes/no) [default=yes]?
 Name of the new storage pool [default=default]: storage_mpi
 Name of the storage backend to use (dir, btrfs, lvm, zfs) [default=zfs]:
