@@ -100,6 +100,11 @@ Agora passe a chave SSH criada para o container
 
 `cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi/rootfs/home/mpi/.ssh/authorized_keys`
 
+Baixe os scripts, [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh) e [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh), que serão utilizados para automatizar a utilização do LXD no MPI
+
+`wget https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh`
+`wget https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh`
+
 Realizadas todas atualizações e configurações necessárias, crie uma nova imagem para ser utilizados pelos slaves do MPI baseado nessa versão de container LXD.
 
 ```
