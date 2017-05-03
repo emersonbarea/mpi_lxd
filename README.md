@@ -1,5 +1,5 @@
 Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso) em bare metal, como VM do Oracle Virtual Box ou outro hypervisor qualquer.
-- crie o usuário `mpi` com senha `mpi` (Obs.: lógico, se sua máquina estiver acessível através de rede, use uma senha mais complexa.
+- crie o usuário `mpi` com senha `mpi` (Obs.: lógico, mude a senha de acordo com suas necessidades de segurança)
 - neste exemplo foi utilizado um disco com 15GB
 - sem interface gráfica
 - apenas com SSH server
