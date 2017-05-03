@@ -1,4 +1,6 @@
 Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso) em bare metal, como VM do Oracle Virtual Box ou outro hypervisor qualquer.
+- crie o usuário `mpi` com senha `mpi`
+- neste exemplo foi utilizado um disco com 15GB
 - sem interface gráfica
 - apenas com SSH server
 - O Ubuntu Server 17.04 - 64 bit já vem com o LXD instalador por padrão
@@ -16,8 +18,8 @@ Inicie a configuração do LXD com o seguinte comando
 
 E responda às questões que lhe forem apresentadas como segue abaixo:
 
-`Do you want to configure a new storage pool (yes/no) [default=yes]?` yes
 ```
+Do you want to configure a new storage pool (yes/no) [default=yes]?
 Name of the new storage pool [default=default]: storage_mpi
 Name of the storage backend to use (dir, btrfs, lvm, zfs) [default=zfs]:
 Create a new ZFS pool (yes/no) [default=yes]?
