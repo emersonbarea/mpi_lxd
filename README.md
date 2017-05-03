@@ -10,10 +10,13 @@ apt-get update
 apt-get upgrade
 apt-get install build-essential openmpi-bin bridge-utils htop
 ```
-Configure o LXD
+Inicie a configuração do LXD com o seguinte comando
 
 `sudo lxd init`
 
+E responda às questões que lhe forem apresentadas como segue abaixo:
+
+```
 Do you want to configure a new storage pool (yes/no) [default=yes]?
 Name of the new storage pool [default=default]: storage_mpi
 Name of the storage backend to use (dir, btrfs, lvm, zfs) [default=zfs]:
@@ -34,6 +37,8 @@ What should the new bridge be called [default=lxdbr0]?
 What IPv4 address should be used (CIDR subnet notation, “auto” or “none”) [default=auto]?
 What IPv6 address should be used (CIDR subnet notation, “auto” or “none”) [default=auto]? none
 LXD has been successfully configured.
+```
+
 lxc launch ubuntu:16.04 first
 lxc list
 lxc info first
