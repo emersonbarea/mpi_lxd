@@ -1,4 +1,7 @@
-Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso)
+Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso) em bare metal, como VM do Oracle Virtual Box ou outro hypervisor qualquer.
+- sem interface gráfica
+- com SSH server
+
 configurações da VM Ubuntu
 apt-get update
 apt-get upgrade
