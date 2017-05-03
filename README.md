@@ -61,6 +61,10 @@ lxc exec mpi_test -- apt-get autoremove --purge -y
 lxc exec mpi_test -- apt-get install build-essential openmpi-bin htop
 lxc exec mpi_test -- bash
 ```
+Obs.: a atualização do Ubuntu dos containers é necessária visto que, a versão do MPI do master (Ubuntu Server 17.04 - MPI versão 2.0.2) deve ser exatamente a mesma dos slaves (Ubuntu 16.04 - MPI versão 1.0.2)
+
+
+
 No master, crie as chaves SSH do usuário mpi para que o master possa conectar nos slaves 
 
 ```
