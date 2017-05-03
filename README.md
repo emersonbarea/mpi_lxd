@@ -26,9 +26,6 @@ Name of the new storage pool [default=default]: storage_mpi
 Name of the storage backend to use (dir, btrfs, lvm, zfs) [default=zfs]:
 Create a new ZFS pool (yes/no) [default=yes]?
 Would you like to use an existing block device (yes/no) [default=no]?
-Size in GB of the new loop device (1GB minimum) [default=15GB]: 5GB
-Invalid input, try again.
-
 Size in GB of the new loop device (1GB minimum) [default=15GB]: 5
 Would you like LXD to be available over the network (yes/no) [default=no]? yes
 Address to bind LXD to (not including port) [default=all]:
