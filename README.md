@@ -105,6 +105,8 @@ Baixe os scripts, [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_
 ```
 wget https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh
 wget https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh
+chmod +x criar_containers_lxd.sh
+chmod +x destruir_containers_lxd.sh
 ```
 **Para entender o funcionamento do script criar_containers_lxd.sh, [clique aqui](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.md)**
 
