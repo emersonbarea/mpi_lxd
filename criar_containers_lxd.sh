@@ -119,7 +119,7 @@ echo "Criando os novos containers que serão utilizados como slave no MPI ..."
 
 while [ $container -lt $num_container_total ]
 do
-  lxc launch mpi_ mpi$container
+  lxc launch mpi mpi$container
   ((container++ ))
 done
 
