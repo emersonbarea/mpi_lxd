@@ -5,10 +5,12 @@ Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-1
 
 Atualizações e configurações necessárias:
 
-`apt-get update
+```
+apt-get update
 apt-get upgrade
 apt-get install build-essential openmpi-bin
-apt-get install bridge-utils htop`
+apt-get install bridge-utils htop
+```
 
 # sudo lxd init
 Do you want to configure a new storage pool (yes/no) [default=yes]?
