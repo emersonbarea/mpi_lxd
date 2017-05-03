@@ -63,9 +63,12 @@ lxc exec mpi_test -- bash
 ```
 Obs.: a atualização do Ubuntu dos containers é necessária visto que, a versão do MPI do master (Ubuntu Server 17.04 - MPI versão 2.0.2) deve ser exatamente a mesma dos slaves (Ubuntu 16.04 - MPI versão 1.0.2)
 
+Verifique se as versões do MPI do master e slave são compatíveis. Execute os seguintes comandos para isso
+- para verificar no master: `mpirun -version`
+- para verificar no slave: `lxc exec mpi_test -- mpirun -version`
 
-
-No master, crie as chaves SSH do usuário mpi para que o master possa conectar nos slaves 
+Agora crie as chaves SSH no master para permitir que ele conecte via SSH sem solicitação de senha durante a execução do MPI.
+No master, faça
 
 ```
 ssh-keygen -t rsa
