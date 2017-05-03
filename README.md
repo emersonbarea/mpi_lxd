@@ -17,7 +17,7 @@ Inicie a configuração do LXD com o seguinte comando
 E responda às questões que lhe forem apresentadas como segue abaixo:
 
 ```
-Do you want to configure a new storage pool (yes/no) [default=yes]?
+Do you want to configure a new storage pool (yes/no) [default=yes]? #yes
 Name of the new storage pool [default=default]: storage_mpi
 Name of the storage backend to use (dir, btrfs, lvm, zfs) [default=zfs]:
 Create a new ZFS pool (yes/no) [default=yes]?
