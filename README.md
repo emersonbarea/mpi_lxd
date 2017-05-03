@@ -38,20 +38,21 @@ What should the new bridge be called [default=lxdbr0]?
 What IPv6 address should be used (CIDR subnet notation, “auto” or “none”) [default=auto]? none
 LXD has been successfully configured.
 ```
+Após a configuração do LXD, baixe e instale uma imagem para ser utilizada por seus containers.
 
-lxc launch ubuntu:16.04 first
+```
+lxc launch ubuntu:16.04 mpi
 lxc list
-lxc info first
-lxc config show first
-lxc config set first limits.memory 256MB
+```
+Passe o `source.list` do Ubuntu master (sua instalação padrão) para os containers (slaves), atualizando a distribuição dos slaves.
 
-precisa passar o sourcelist do master para os slaves para ele colocar a mesma versão do mpi
-
-lxc exec first -- apt-get update
-lxc exec first -- apt-get dist-upgrade -y
-lxc exec first -- apt-get autoremove --purge -y
-lxc exec first -- apt-get install build-essential openmpi-bin
-lxc exec first -- bash
+```
+lxc exec mpi -- apt-get update
+lxc exec mpi -- apt-get dist-upgrade -y
+lxc exec mpi -- apt-get autoremove --purge -y
+lxc exec mpi -- apt-get install build-essential openmpi-bin
+lxc exec mpi -- bash
+```
 com usuário mpi e root
 ssh-keygen -t rsa
 cat /home/mpi/.ssh/id_rsa.pub (colar no /root/.ssh/authorized.key e /home/ubuntu/
