@@ -13,7 +13,6 @@ Atualizações e configurações necessárias:
 apt-get update
 apt-get upgrade
 apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux git mpi
-git clone https://github.com/emersonbarea/mpi_lxd.git
 ```
 ## Configurando o Ambiente LXD
 
