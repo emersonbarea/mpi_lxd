@@ -40,6 +40,7 @@ Again:
 Would you like stale cached images to be updated automatically (yes/no) [default=yes]? no
 Would you like to create a new network bridge (yes/no) [default=yes]?
 What should the new bridge be called [default=lxdbr0]?
+What IPv4 address should be used (CIDR subnet notation, “auto” or “none”) [default=auto]?
 What IPv6 address should be used (CIDR subnet notation, “auto” or “none”) [default=auto]? none
 LXD has been successfully configured.
 ```
