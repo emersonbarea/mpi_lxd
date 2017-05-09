@@ -106,14 +106,11 @@ Agora passe a chave SSH criada para o container
 
 `cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi-test/rootfs/home/mpi/.ssh/authorized_keys`
 
-Baixe os scripts, [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh) e [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh), que serão utilizados para automatizar a utilização do LXD no MPI
+Baixe os scripts, [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh), [rodar_aplicacao.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/rodar_aplicacao_mpi.sh) e [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh), que serão utilizados para automatizar a utilização do LXD no MPI
 
 ```
 git clone https://github.com/emersonbarea/mpi_lxd
-mv /home/mpi/mpi_lxd/criar_containers_lxd.sh /home/mpi/
-mv /home/mpi/mpi_lxd/destruir_containers_lxd.sh /home/mpi/
-chmod +x mpi_lxd/criar_containers_lxd.sh
-chmod +x mpi_lxd/destruir_containers_lxd.sh
+chmod +x mpi_lxd/*.sh
 ```
 **Para entender o funcionamento do script criar_containers_lxd.sh, [clique aqui](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.md)**
 
