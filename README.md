@@ -12,7 +12,7 @@ Atualizações e configurações necessárias:
 ```
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux git mpi
+sudo apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux git mpi libopenmpi-dev
 ```
 ## Configurando o Ambiente LXD
 
