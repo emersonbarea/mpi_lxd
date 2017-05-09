@@ -51,7 +51,7 @@ lxc list
 ```
 Atualize o `source.list` do container com o `source.list` do Ubuntu master, permitindo a atualização da distribuição dos slaves.
 
-`cat /etc/apt/sources.list >  /var/lib/lxd/containers/mpi/rootfs/etc/apt/sources.list`
+`cat /etc/apt/sources.list >  /var/lib/lxd/containers/mpi-test/rootfs/etc/apt/sources.list`
 
 Agora, atualize a distribuição Ubuntu dos containers
 
