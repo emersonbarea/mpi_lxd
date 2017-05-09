@@ -129,3 +129,5 @@ Agora seu ambiente está pronto para utilizar o MPI em containers LXD. Para isso
 Para executar programas MPI, execute o script shell [rodar_aplicacao.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/rodar_aplicacao_mpi.sh) informando o nome do programa MPI que deseja executar.
 
 Para destruir os containers LXD, execute o script shell [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh).
+
+Caso queira, siga o [exemplo](https://github.com/emersonbarea/mpi_lxd/blob/master/example.md) para execução de programa MPI.
