@@ -46,7 +46,7 @@ LXD has been successfully configured.
 Após a configuração do LXD, baixe e instale uma imagem para ser utilizada por seus containers.
 
 ```
-lxc launch ubuntu:16.04 mpi_test
+lxc launch ubuntu:16.04 mpi-test
 lxc list
 ```
 Atualize o `source.list` do container com o `source.list` do Ubuntu master, permitindo a atualização da distribuição dos slaves.
@@ -56,16 +56,16 @@ Atualize o `source.list` do container com o `source.list` do Ubuntu master, perm
 Agora, atualize a distribuição Ubuntu dos containers
 
 ```
-lxc exec mpi_test -- apt-get update
-lxc exec mpi_test -- apt-get dist-upgrade -y
-lxc exec mpi_test -- apt-get autoremove --purge -y
-lxc exec mpi_test -- apt-get install build-essential openmpi-bin htop lam-runtime
+lxc exec mpi-test -- apt-get update
+lxc exec mpi-test -- apt-get dist-upgrade -y
+lxc exec mpi-test -- apt-get autoremove --purge -y
+lxc exec mpi-test -- apt-get install build-essential openmpi-bin htop lam-runtime
 ```
 Obs.: a atualização do Ubuntu dos containers é necessária visto que, a versão do MPI do master (Ubuntu Server 17.04 - MPI versão 2.0.2) deve ser exatamente a mesma dos slaves (Ubuntu 16.04 - MPI versão 1.0.2)
 
 Verifique se as versões do MPI do master e slave são compatíveis. Execute os seguintes comandos para isso
 - para verificar no master: `mpirun -version`
-- para verificar no slave: `lxc exec mpi_test -- mpirun -version`
+- para verificar no slave: `lxc exec mpi-test -- mpirun -version`
 
 Agora crie as chaves SSH no master para permitir que ele conecte via SSH sem solicitação de senha durante a execução do MPI.
 No master, faça
@@ -115,9 +115,9 @@ chmod +x mpi_lxd/destruir_containers_lxd.sh
 Realizadas todas atualizações e configurações necessárias, crie uma nova imagem para ser utilizados pelos slaves do MPI baseado nessa versão de container LXD.
 
 ```
-lxc stop mpi_test
-lxc publish mpi_test --alias=mpi
-lxc delete mpi_test
+lxc stop mpi-test
+lxc publish mpi-test --alias=mpi
+lxc delete mpi-test
 ```
 Agora seu ambiente está pronto para utilizar o MPI em containers LXD. Para isso, execute o script [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.md).
 
