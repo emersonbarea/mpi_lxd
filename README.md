@@ -119,3 +119,7 @@ lxc publish mpi_test --alias=mpi
 lxc delete mpi_test
 ```
 Agora seu ambiente está pronto para utilizar o MPI em containers LXD. Para isso, execute o script [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.md).
+
+Para executar programas MPI, execute o script shell [rodar_aplicacao.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/rodar_aplicacao_mpi.sh) informando o nome do programa MPI que deseja executar.
+
+Para destruir os containers LXD, execute o script shell [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh).
