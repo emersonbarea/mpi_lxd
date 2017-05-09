@@ -54,7 +54,7 @@ Atualize o `source.list` do container com o `source.list` do Ubuntu master, perm
 
 `cat /etc/apt/sources.list >  /var/lib/lxd/containers/mpi-test/rootfs/etc/apt/sources.list`
 
-Agora, atualize a distribuição Ubuntu dos containers
+Agora, atualize a distribuição Ubuntu dos containers, crie o usuário `mpi` e crie o diretório `.ssh` para receber as chaves SSH.
 
 ```
 lxc exec mpi-test -- apt-get update
@@ -62,6 +62,8 @@ lxc exec mpi-test -- apt-get dist-upgrade -y
 lxc exec mpi-test -- apt-get autoremove --purge -y
 lxc exec mpi-test -- apt-get install build-essential openmpi-bin htop lam-runtime
 lxc exec mpi-test -- adduser mpi
+lxc exec mpi-test -- mkdir /home/mpi/.ssh
+lxc exec mpi-test -- chown mpi.mpi /home/mpi/.ssh
 ```
 Obs. 1: a atualização do Ubuntu dos containers é necessária visto que, a versão do MPI do master (Ubuntu Server 17.04 - MPI versão 2.0.2) deve ser exatamente a mesma dos slaves (Ubuntu 16.04 - MPI versão 1.0.2)
 
