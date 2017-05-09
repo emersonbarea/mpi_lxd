@@ -61,8 +61,11 @@ lxc exec mpi-test -- apt-get update
 lxc exec mpi-test -- apt-get dist-upgrade -y
 lxc exec mpi-test -- apt-get autoremove --purge -y
 lxc exec mpi-test -- apt-get install build-essential openmpi-bin htop lam-runtime
+lxc exec mpi-test -- adduser mpi
 ```
-Obs.: a atualização do Ubuntu dos containers é necessária visto que, a versão do MPI do master (Ubuntu Server 17.04 - MPI versão 2.0.2) deve ser exatamente a mesma dos slaves (Ubuntu 16.04 - MPI versão 1.0.2)
+Obs. 1: a atualização do Ubuntu dos containers é necessária visto que, a versão do MPI do master (Ubuntu Server 17.04 - MPI versão 2.0.2) deve ser exatamente a mesma dos slaves (Ubuntu 16.04 - MPI versão 1.0.2)
+
+Obs. 2: a senha do usuário `mpi` deve ser `mpi`.
 
 Verifique se as versões do MPI do master e slave são compatíveis. Execute os seguintes comandos para isso
 - para verificar no master: `mpirun -version`
@@ -100,7 +103,7 @@ The key's randomart image is:
 ```
 Agora passe a chave SSH criada para o container
 
-`cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi/rootfs/home/mpi/.ssh/authorized_keys`
+`cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi-test/rootfs/home/mpi/.ssh/authorized_keys`
 
 Baixe os scripts, [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh) e [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh), que serão utilizados para automatizar a utilização do LXD no MPI
 
