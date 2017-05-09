@@ -10,9 +10,9 @@ Instalar [Ubuntu Server 17.04 - 64bit](http://releases.ubuntu.com/17.04/ubuntu-1
 Atualizações e configurações necessárias:
 
 ```
-apt-get update
-apt-get upgrade
-apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux git mpi
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install build-essential libopenmpi2 openmpi-bin bridge-utils htop zfsutils-linux git mpi
 ```
 ## Configurando o Ambiente LXD
 
@@ -51,7 +51,7 @@ lxc list
 ```
 Atualize o `source.list` do container com o `source.list` do Ubuntu master, permitindo a atualização da distribuição dos slaves.
 
-`cat /etc/apt/sources.list >  /var/lib/lxd/containers/mpi-test/rootfs/etc/apt/sources.list`
+`sudo cat /etc/apt/sources.list >  /var/lib/lxd/containers/mpi-test/rootfs/etc/apt/sources.list`
 
 Agora, atualize a distribuição Ubuntu dos containers, crie o usuário `mpi` e crie o diretório `.ssh` para receber as chaves SSH.
 
@@ -104,13 +104,16 @@ The key's randomart image is:
 ```
 Agora passe a chave SSH criada para o container
 
-`cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi-test/rootfs/home/mpi/.ssh/authorized_keys`
+`sudo cat /home/mpi/.ssh/id_rsa.pub > /var/lib/lxd/containers/mpi-test/rootfs/home/mpi/.ssh/authorized_keys`
 
 Baixe os scripts, [criar_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.sh), [rodar_aplicacao.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/rodar_aplicacao_mpi.sh) e [destruir_containers_lxd.sh](https://github.com/emersonbarea/mpi_lxd/blob/master/destruir_containers_lxd.sh), que serão utilizados para automatizar a utilização do LXD no MPI
 
 ```
 git clone https://github.com/emersonbarea/mpi_lxd
-chmod +x mpi_lxd/*.sh
+mv mpi_lxd/*.sh .
+mv mpi_lxd/MPI_Programs .
+chmod +x *.sh
+rm -rf mpi_lxd/
 ```
 **Para entender o funcionamento do script criar_containers_lxd.sh, [clique aqui](https://github.com/emersonbarea/mpi_lxd/blob/master/criar_containers_lxd.md)**
 
